@@ -1,0 +1,14 @@
+[
+	{
+		header: 'People'
+	},
+	{
+		header: 'Nature'
+	},
+	{
+		header: 'Buildings'
+	},
+	{
+		header: 'Music'
+	}
+]

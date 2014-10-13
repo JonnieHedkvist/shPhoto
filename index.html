@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="shPhoto">
+
+<head lang="en">
+  <meta charset="utf-8">
+  <title>Sophia Hogman Photography</title>
+  <!-- include scripts -->
+  <script src="scripts/frameworks/jquery-1.11.1.min.js"></script>
+  <script src="scripts/frameworks/angular.js"></script>
+  <script src="scripts/frameworks/bootstrap.min.js"></script>
+  <script src="scripts/main.js"></script>
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles/bootstrap-responsive.css" type="text/css"/>
+  <link rel="stylesheet" href="styles/bootstrap.css" type="text/css"/>
+</head>
+
+<body>
+  <div ng-controller="MenuController">
+    <ul>
+      <li ng-repeat="category in categories"><a>{{ category.header }}</a></li>
+    </ul>
+  </div>
+
+  
+</body>
+
+</html>
