@@ -1,0 +1,103 @@
+@font-face {
+	font-family: 'HelveticaCL';
+	src: url('fonts/HelveticaCL.otf.eot'); 
+	src: 
+		local('HelveticaCL'),
+		local('HelveticaCL'),
+		url('fonts/HelveticaCL.otf') 
+		format('opentype');
+}
+
+body {
+	background-color: white;
+	padding: 0px;
+    margin: 0px;
+    font-family: 'HelveticaCL'
+}
+
+h1{
+	text-align: center;
+	font-size: 1.8em;
+	font-family: 'HelveticaCL';
+}
+
+h2{
+	text-align: center;
+	font-size: 1.2em;
+	font-family: 'HelveticaCL';
+	padding: 0px;
+    margin: 0px;
+}
+
+p {
+	text-shadow: 2px 2px 5px #FFFFFF;
+}
+
+ul {
+    list-style-type: none;
+    display: inline-block;
+    padding: 0px;
+    margin: 0px;
+}
+
+ul li {
+	display: inline-block;
+}
+
+.auto-resize{
+	max-width: 100%;
+	height: auto;
+}
+
+.transparent {
+	opacity: 0.4;
+    filter: alpha(opacity=40); /* For IE8 and earlier */
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+
+#navigation-menu {
+	position: fixed;
+	width: 100%;
+	height: auto;
+	background-color: white;
+	z-index: 9999;
+}
+
+.container {
+}
+
+.img-placeholder{
+	height: 80vh;
+	background-color: none;
+}
+
+#splash-image {
+    background-image: url('../img/natur.jpg');
+    background-color: #cccccc;
+}
+
+/*Parallax scrolling */
+.parallax {
+  perspective: 1px;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.parallax__layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.parallax__layer--base {
+  transform: translateZ(0);
+}
+.parallax__layer--back {
+  transform: translateZ(-1px) scale(2);
+}
