@@ -1,6 +1,13 @@
 
 var app = angular.module('shPhoto', []);
 
+app.directive('topNav', function() {
+	return {
+	  restrict: 'E',
+	  templateUrl: 'top-nav.html'
+	};
+});
+
 app.controller('MenuController', function($scope, $http){
 	$scope.items = [
 		{
@@ -58,6 +65,18 @@ app.controller('ImageController', function($scope){
 			},
 			{
 				src: 'http://lorempixel.com/800/600/' + categoryName
+			},
+			{
+				src: 'http://lorempixel.com/720/540/' + categoryName
+			},
+			{
+				src: 'http://lorempixel.com/640/400/' + categoryName
+			},
+			{
+				src: 'http://lorempixel.com/720/540/' + categoryName
+			},
+			{
+				src: 'http://lorempixel.com/640/400/' + categoryName
 			},
 			{
 				src: 'http://lorempixel.com/720/540/' + categoryName
