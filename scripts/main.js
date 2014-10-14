@@ -2,7 +2,7 @@
 var app = angular.module('shPhoto', []);
 
 app.controller('MenuController', function($scope, $http){
-	$scope.categories = [
+	$scope.items = [
 		{
 			header: 'Portfolio'
 		},
@@ -19,16 +19,53 @@ app.controller('MenuController', function($scope, $http){
 });
 
 app.controller('ImageController', function($scope){
-	$scope.images = [
+	$scope.categories = [
 		{
-			src: 'http://lorempixel.com/640/400/people/'
+			header: 'Animals'
 		},
 		{
-			src: 'http://lorempixel.com/640/400/people/'
+			header: 'City'
 		},
 		{
-			src: 'http://lorempixel.com/640/400/people/'
+			header: 'Food'
+		},
+		{
+			header: 'Fashion'
+		},
+		{
+			header: 'People'
 		}
 	];
+	$scope.images = [
+		{
+			src: 'http://lorempixel.com/640/400/abstract/'
+		},
+		{
+			src: 'http://lorempixel.com/640/400/abstract/'
+		},
+		{
+			src: 'http://lorempixel.com/640/400/abstract/'
+		}
+	];
+	$scope.loadCategory = function(categoryName){
+		categoryName = categoryName.toLowerCase();
+		$scope.images = [
+			{
+				src: 'http://lorempixel.com/800/600/' + categoryName
+			},
+			{
+				src: 'http://lorempixel.com/720/540/' + categoryName
+			},
+			{
+				src: 'http://lorempixel.com/800/600/' + categoryName
+			},
+			{
+				src: 'http://lorempixel.com/720/540/' + categoryName
+			},
+			{
+				src: 'http://lorempixel.com/800/600/' + categoryName
+			}
+		];
+	};
 
 });
