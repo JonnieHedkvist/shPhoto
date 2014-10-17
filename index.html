@@ -15,50 +15,41 @@
   </head>
 
   <body>
-    <div id="navigation-menu" class="center" ng-controller="MenuController">
-        <div id="header-logo" class="center">
-          <h1>SOPHIA HOGMAN</h1>
-        </div>
-          <ul>
-              <li ng-repeat="item in items"><span>{{ item.header }}</span></li>
-          </ul>
+    <div id="navigation-menu" class="center bg-offwhite" ng-controller="MenuController">
+        <top-nav></top-nav>
     </div>
     <div class="container">
       <div class="parallax">
-        <div class="parallax__group">
-          <div class="parallax__layer parallax__layer--back">
-            <img class="auto-resize" src="img/autumn.jpg"/>
+        <div class="parallax-group">
+          <div class="parallax-layer parallax-layer-back">
+            <img class="splash-image" src="img/autumn.jpg"/>
           </div>
-          <div class="parallax__layer parallax__layer--base">
-            <img class="auto-resize" src="img/placeholder-big.png"/>
+          <div class="parallax-layer parallax-layer-base">
+            <!-- <img class="auto-resize" src="img/placeholder-big.png"/> -->
 
-            <div id="third" class="content-div" ng-controller="PhotoController">
-              <div id="small-nav" class="">
+            <div class="content-div" ng-controller="PhotoController">
+              <div id="small-nav">
                 <ul>
                   <li ng-repeat="category in categories"><span ng-click="loadCategory(category.header)">{{category.header}}</span></li>
                 </ul>
               </div>
-              <div class="center">
-                <div class="image-container" ng-repeat="photo in photos | filter:byCategory">
-                  <photo-container></photo-container>
-                </div>
+              <div class="center sub-content">
+                  <photo-container ng-repeat="photo in photos | filter:byCategory"></photo-container>
               </div>
             </div>
 
-            <div id="second" class="content-div">
-              <div class="center">
+            <div class="content-div">
+              <div class="center sub-content">
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc.</p>
                 <p>Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo.</p>
                 <p>Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc.</p>
               </div>
             </div>
-            
+
           </div>
         </div>
       </div>
-      <div>
-      </div>
     </div>
-    <footer></footer>
+    <footer class="bg-offwhite"></footer>
   </body>
 </html>

@@ -5,104 +5,123 @@
 *	font-family: 'Raleway', sans-serif;
 */
 
-html {
-    position: relative;
-    min-height: 100%;
-}
+/* Basics */
+	html {
+	    position: relative;
+	    min-height: 100%;
+	}
 
-footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    height: 8vh;
-    width: 100%;
-    background-color: #EEEEEE;
-    z-index: 100;
-    border-top: 0.3vh solid #999;
-}
+	footer {
+	    position: fixed;
+	    left: 0;
+	    bottom: 0;
+	    height: 8vh;
+	    width: 100%;
+	    z-index: 100;
+	    border-top: 0.3vh solid #999;
+	}
 
-body {
-	padding: 0px;
-    margin: 0 0 8vh; /* bottom = footer height */
-    font-family: 'Quicksand'
-}
+	body {
+		padding: 0px;
+	    margin: 0 0 8vh; /* bottom = footer height */
+	    font-family: 'Quicksand'
+	}
 
-h1{
-	text-align: center;
-	font-size: 1.8em;
-	font-family: 'Crafty Girls';
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-}
+	h1{
+		text-align: center;
+		font-size: 1.8em;
+		font-family: 'Crafty Girls';
+	    margin-bottom: 0px;
+	    padding-bottom: 0px;
+	}
 
-p{
-	color: white;
-}
+	p{
+		color: white;
+	}
 
-img.grayscale {
-    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
-    filter: gray; /* IE6-9 */
-    -webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
-}
+/* Basic Grid and Layout rules */
+	.center {
+	    margin-left: auto;
+	    margin-right: auto;
+	    width: 80%;
+	}
 
-.image-container{
-	margin-top: 2vh;
-	display: inline-block;
-	padding: 1vmin;
+	.content-div{
+		padding-top: 400px;
+		min-height: 100vh;
+		height: auto;
+	}
+	.sub-content{
+	}
 
-}
 
-.photo{
-	width: auto;
-	height: auto;
-	overflow: hidden;
-	position: relative;
-	background-color: white;
-	padding: 1.5vmin;
-	
-}
+/* Photos and Img */
 
-img.img-thumb{
-	width: 20vmin;
-	height: auto;
-	/*border: 1.5vmin solid #FFF;*/
-}
+	photo-container{
+		padding: 0;
+		margin: 0;
+		font-size: 0;
+	}
 
-.photo-overlay{
-	position:absolute;
-	top:0;
-	left:0;
-	width: 100%;
-	height: 96%;
-	background-color: #fff;
-	opacity:0.2;
-	z-index: 200;
-}
+	.photo{
+		position: relative;
+		margin: 1.5vmin;
+		display: inline-block;
+		border: 1.5vmin solid #FFF;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		
+	}
 
-.white{
-	background-color: #F9F9F9;
-}
+	.photo-overlay{
+		position:absolute;
+		width: 100%;
+		height: 100%;
+		top:0;
+		left:0;
+		opacity:0.2;
+		z-index: 200;
+		color: white;
+	}
+		.photo-overlay h5{
+			padding-top: 0;
+			margin-top: 0;
+			padding-left: 1vmin;
+			font-size: 2vmin;
+			font-family: 'Raleway';
+			font-weight: 300;
+		}
+		.photo-overlay p{
+			font-size: 1vmin;
+			padding: 2vmin;
+			font-family: 'Quicksand'
+		}
 
-.auto-resize{
-	min-width: 100vh;
-	height: auto;
-	/*min-height: 90vh;*/
-	margin-top: auto;
-	margin-bottom: auto;
-}
+	img.img-thumb{
+		width: 20vmin;
+		height: auto;
+	}
 
-.center {
-    margin-left: auto;
-    margin-right: auto;
-    width: auto;
-}
+	img.grayscale {
+	    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
+	    filter: gray;
+	    -webkit-filter: grayscale(100%);
+	}
+
+	.splash-image{
+		min-width: 100vw;
+		height: auto;
+		margin-top: auto;
+		margin-bottom: auto;
+	}
+
 
 #navigation-menu {
 	position: fixed;
 	width: 100%;
 	height: 100px;
 	z-index: 100;
-	background-color: white;
 	border-bottom: 0.4vh solid #999;
 }
 
@@ -178,50 +197,55 @@ img.img-thumb{
 			}
 
 
-.content-div{
-	
-	padding-top: 100px;
-	/*background-color: #CCCCCC;*/
-	min-height: 100vh;
-	height: auto;
-}
-#main-content{
-}
+/* Color by class */
 
-#second{
-	background-image: url('../img/fabric.jpg');
-}
+	.bg-white{
+		background-color: #FFF;
+	}
+	.bg-offwhite{
+		background-color: #FFFFF8;
+	}
+	.bg-lightgray{
+		background-color: #F9F9F9;
+	}
+	.bg-black{
+		background-color: #000;
+	}
 
-#third{
-	/*background-image: url('../img/coal.jpg');
-	background-color: #CCC;
-*/}
-
-.transparent{
-	opacity: 0.4;
-}
-
-.container {
-}
+/* Transparency classes */
+	.transparent{
+		opacity: 0;
+	}
+	.transparent4{
+		opacity: 0.4;
+	}
+	.transparent6{
+		opacity: 0.6;
+	}
+	.transparent8{
+		opacity: 0.8;
+	}
 
 /*Parallax scrolling */
-.parallax {
-  perspective: 1px;
-  height: 100vh;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-.parallax__layer {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-.parallax__layer--base {
-  	transform: translateZ(0);
-}
-.parallax__layer--back {
-	padding-top: 100px;
-  transform: translateZ(-2px) scale(3);
-}
+	.parallax {
+	  perspective: 1px;
+	  height: 100vh;
+	  overflow-x: hidden;
+	  overflow-y: auto;
+	}
+		.parallax-layer {
+		  position: absolute;
+		  top: 0;
+		  right: 0;
+		  bottom: 0;
+		  left: 0;
+		}
+			.parallax-layer-base {
+			  	transform: translateZ(0);
+			}
+			.parallax-layer-back {
+			  transform: translateZ(-2px) scale(3);
+			}
+
+
+

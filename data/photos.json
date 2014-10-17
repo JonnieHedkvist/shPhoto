@@ -79,7 +79,7 @@
 		 	"people"
 		],
 		"subtext" : "Ett foto jag tog en vacker dag i april",
-		"src" : "http://lorempixel.com/720/540/people",
+		"src" : "http://lorempixel.com/800/600/people",
 		"show" : true
 	},
 	{
@@ -226,7 +226,7 @@
 		 	"people"
 		],
 		"subtext" : "Ett foto jag tog en vacker dag i april",
-		"src" : "http://lorempixel.com/720/540/people",
+		"src" : "http://lorempixel.com/800/600/people",
 		"show" : true
 	}
 ]

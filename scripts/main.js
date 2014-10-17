@@ -10,8 +10,6 @@ app.controller('MenuController', function($scope, $http){
 
 app.controller('PhotoController', function($scope, $http){
 	$scope.selectedCategory = 'all';
-	$scope.categories = [];
-	
 	$scope.categories = [
 		{
 			header: 'Animals'
@@ -29,6 +27,7 @@ app.controller('PhotoController', function($scope, $http){
 			header: 'People'
 		}
 	];
+
 	$http.get('data/photos.json').success(function(data) {
 	   $scope.photos = data;
 	});
@@ -46,5 +45,12 @@ app.directive('photoContainer', function() {
 	return {
 		restrict: 'E',
 		templateUrl: '/partials/photo-container.html'
+	};
+});
+
+app.directive('topNav', function() {
+	return {
+		restrict: 'E',
+		templateUrl: '/partials/top-nav.html'
 	};
 });
