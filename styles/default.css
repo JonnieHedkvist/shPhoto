@@ -18,7 +18,7 @@ footer {
     width: 100%;
     background-color: #EEEEEE;
     z-index: 100;
-    border-top: 0.5vh solid #999;
+    border-top: 0.3vh solid #999;
 }
 
 body {
@@ -46,15 +46,37 @@ img.grayscale {
 }
 
 .image-container{
+	margin-top: 2vh;
 	display: inline-block;
 	padding: 1vmin;
 
 }
 
-img.img-thumb{
-	width: 20vmax;
+.photo{
+	width: auto;
 	height: auto;
-	border: 1.5vmin solid #FFF;
+	overflow: hidden;
+	position: relative;
+	background-color: white;
+	padding: 1.5vmin;
+	
+}
+
+img.img-thumb{
+	width: 20vmin;
+	height: auto;
+	/*border: 1.5vmin solid #FFF;*/
+}
+
+.photo-overlay{
+	position:absolute;
+	top:0;
+	left:0;
+	width: 100%;
+	height: 96%;
+	background-color: #fff;
+	opacity:0.2;
+	z-index: 200;
 }
 
 .white{
@@ -62,10 +84,9 @@ img.img-thumb{
 }
 
 .auto-resize{
-	width: 100vmax;
-	min-width: 100vmin;
+	min-width: 100vh;
 	height: auto;
-	min-height: 90vh;
+	/*min-height: 90vh;*/
 	margin-top: auto;
 	margin-bottom: auto;
 }
@@ -73,7 +94,7 @@ img.img-thumb{
 .center {
     margin-left: auto;
     margin-right: auto;
-    width: 80%;
+    width: auto;
 }
 
 #navigation-menu {
@@ -82,7 +103,7 @@ img.img-thumb{
 	height: 100px;
 	z-index: 100;
 	background-color: white;
-	border-bottom: 0.2vh solid #999;
+	border-bottom: 0.4vh solid #999;
 }
 
 	#navigation-menu ul{
@@ -125,8 +146,9 @@ img.img-thumb{
 	padding-bottom: 8px;
 	z-index: 100;
 	background-color: white;
-	border-bottom: 0.2vh solid #999;
-	border-top: 0.2vh solid #999;
+	border-bottom: 0.5vmin solid #666;
+	border-top: 0.5vmin solid #666;
+	opacity: 0.8;
 }
 
 	#small-nav ul{
@@ -159,8 +181,9 @@ img.img-thumb{
 .content-div{
 	
 	padding-top: 100px;
-	background-color: #CCCCCC;
-	height: 100vh;
+	/*background-color: #CCCCCC;*/
+	min-height: 100vh;
+	height: auto;
 }
 #main-content{
 }
@@ -170,8 +193,9 @@ img.img-thumb{
 }
 
 #third{
-	background-color: #F9F9F9;
-}
+	/*background-image: url('../img/coal.jpg');
+	background-color: #CCC;
+*/}
 
 .transparent{
 	opacity: 0.4;
@@ -199,5 +223,5 @@ img.img-thumb{
 }
 .parallax__layer--back {
 	padding-top: 100px;
-  transform: translateZ(-1px) scale(2);
+  transform: translateZ(-2px) scale(3);
 }

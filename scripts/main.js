@@ -1,31 +1,17 @@
 
 var app = angular.module('shPhoto', []);
 
-app.directive('topNav', function() {
-	return {
-	  restrict: 'E',
-	  templateUrl: 'top-nav.html'
-	};
-});
-
 app.controller('MenuController', function($scope, $http){
-	$scope.items = [
-		{
-			header: 'Portfolio'
-		},
-		{
-			header: 'About'
-		},
-		{
-			header: 'Contact'
-		}
-	];
-	//$http.get('data/categories.json').success(function(data) {
-	//    $scope.categories = data;
-	//});
+	$scope.items = [];
+	$http.get('data/categories.json').success(function(data) {
+	   $scope.items = data;
+	});
 });
 
-app.controller('ImageController', function($scope){
+app.controller('PhotoController', function($scope, $http){
+	$scope.selectedCategory = 'all';
+	$scope.categories = [];
+	
 	$scope.categories = [
 		{
 			header: 'Animals'
@@ -43,48 +29,22 @@ app.controller('ImageController', function($scope){
 			header: 'People'
 		}
 	];
-	$scope.images = [
-		{
-			src: 'http://lorempixel.com/640/400/abstract/'
-		},
-		{
-			src: 'http://lorempixel.com/640/400/abstract/'
-		},
-		{
-			src: 'http://lorempixel.com/640/400/abstract/'
-		}
-	];
-	$scope.loadCategory = function(categoryName){
-		categoryName = categoryName.toLowerCase();
-		$scope.images = [
-			{
-				src: 'http://lorempixel.com/800/600/' + categoryName
-			},
-			{
-				src: 'http://lorempixel.com/720/540/' + categoryName
-			},
-			{
-				src: 'http://lorempixel.com/800/600/' + categoryName
-			},
-			{
-				src: 'http://lorempixel.com/720/540/' + categoryName
-			},
-			{
-				src: 'http://lorempixel.com/640/400/' + categoryName
-			},
-			{
-				src: 'http://lorempixel.com/720/540/' + categoryName
-			},
-			{
-				src: 'http://lorempixel.com/640/400/' + categoryName
-			},
-			{
-				src: 'http://lorempixel.com/720/540/' + categoryName
-			},
-			{
-				src: 'http://lorempixel.com/800/600/' + categoryName
-			}
-		];
+	$http.get('data/photos.json').success(function(data) {
+	   $scope.photos = data;
+	});
+
+	$scope.byCategory = function(photos) {
+	    return photos.categories.indexOf($scope.selectedCategory) > -1;
 	};
 
+	$scope.loadCategory = function(categoryName){
+		$scope.selectedCategory = categoryName.toLowerCase();
+	};
+});
+
+app.directive('photoContainer', function() {
+	return {
+		restrict: 'E',
+		templateUrl: '/partials/photo-container.html'
+	};
 });

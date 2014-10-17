@@ -7,55 +7,43 @@
     <!-- include scripts -->
     <script src="scripts/frameworks/jquery-1.11.1.min.js"></script>
     <script src="scripts/frameworks/angular.js"></script>
+    <script src="scripts/frameworks/ui-utils.js"></script>
     <script src="scripts/main.js"></script>
     <!-- Stylesheets -->
-    <link href='http://fonts.googleapis.com/css?family=Crafty+Girls|Quicksand|Josefin+Sans|Raleway:300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Crafty+Girls|Quicksand:400,700|Josefin+Sans|Raleway:300,600' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="styles/default.css" type="text/css"/>
   </head>
 
   <body>
     <div id="navigation-menu" class="center" ng-controller="MenuController">
-      <div id="header-logo" class="center">
-        <h1>SOPHIA HOGMAN</h1>
-      </div>
-      <div class="center">
-        <ul>
-          <li ng-repeat="item in items"><span>{{ item.header }}</span></li>
-        </ul>
-      </div>
+        <div id="header-logo" class="center">
+          <h1>SOPHIA HOGMAN</h1>
+        </div>
+          <ul>
+              <li ng-repeat="item in items"><span>{{ item.header }}</span></li>
+          </ul>
     </div>
     <div class="container">
       <div class="parallax">
         <div class="parallax__group">
           <div class="parallax__layer parallax__layer--back">
-            <img class="auto-resize transparent" src="img/autumn.jpg"/>
+            <img class="auto-resize" src="img/autumn.jpg"/>
           </div>
           <div class="parallax__layer parallax__layer--base">
             <img class="auto-resize" src="img/placeholder-big.png"/>
 
-            <div id="third" class="content-div" ng-controller="ImageController">
+            <div id="third" class="content-div" ng-controller="PhotoController">
               <div id="small-nav" class="">
                 <ul>
                   <li ng-repeat="category in categories"><span ng-click="loadCategory(category.header)">{{category.header}}</span></li>
                 </ul>
               </div>
               <div class="center">
-                <div class="image-container" ng-repeat="image in images">
-                  <img class="img-thumb" src="{{image.src}}"/>
+                <div class="image-container" ng-repeat="photo in photos | filter:byCategory">
+                  <photo-container></photo-container>
                 </div>
               </div>
             </div>
-
-            <!-- <div class="full-width white content-div">
-              <div id="anchorPortfolio">
-                <div class="center" id="main-content" ng-controller="ImageController">
-                  <div class="image-container" ng-repeat="image in images">
-                    <img class="img-thumb" src="{{image.src}}"/>
-                    
-                  </div>
-                </div>
-              </div>
-            </div> -->
 
             <div id="second" class="content-div">
               <div class="center">
