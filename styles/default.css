@@ -1,8 +1,9 @@
 /*
-*	font-family: 'Crafty Girls', cursive;
+*	font-family: 'Poiret+One', cursive;
 *	font-family: 'Quicksand', sans-serif;
 *	font-family: 'Josefin Sans', sans-serif;
 *	font-family: 'Raleway', sans-serif;
+*	font-family: 'Cinzel';
 */
 
 /* Basics */
@@ -30,7 +31,8 @@
 	h1{
 		text-align: center;
 		font-size: 1.8em;
-		font-family: 'Crafty Girls';
+		font-family: 'Cinzel';
+		font-weight: 400;
 	    margin-bottom: 0px;
 	    padding-bottom: 0px;
 	}
@@ -46,11 +48,16 @@
 	    width: 80%;
 	}
 
+	.container{
+		position: absolute;
+	}
+
 	.content-div{
-		padding-top: 400px;
+		padding-top: 100px;
 		min-height: 100vh;
 		height: auto;
 	}
+
 	.sub-content{
 	}
 
@@ -66,6 +73,7 @@
 	.photo{
 		position: relative;
 		margin: 1.5vmin;
+		padding: 1px;
 		display: inline-block;
 		border: 1.5vmin solid #FFF;
 		-webkit-box-sizing: border-box;
@@ -80,22 +88,23 @@
 		height: 100%;
 		top:0;
 		left:0;
-		opacity:0.2;
 		z-index: 200;
 		color: white;
+		display: none;
 	}
 		.photo-overlay h5{
-			padding-top: 0;
 			margin-top: 0;
+			padding-top: 5px;
 			padding-left: 1vmin;
-			font-size: 2vmin;
+			font-size: 1.5vmin;
 			font-family: 'Raleway';
 			font-weight: 300;
 		}
 		.photo-overlay p{
-			font-size: 1vmin;
-			padding: 2vmin;
-			font-family: 'Quicksand'
+			font-size: 1.3vmin;
+			padding-left: 0.5vmin;
+			/*padding: 2vmin;*/
+			font-family: 'Cinzel'
 		}
 
 	img.img-thumb{
@@ -116,35 +125,41 @@
 		margin-bottom: auto;
 	}
 
-
-#navigation-menu {
-	position: fixed;
-	width: 100%;
-	height: 100px;
-	z-index: 100;
-	border-bottom: 0.4vh solid #999;
-}
-
-	#navigation-menu ul{
+/* Navigation */
+	.nav-list {
 		text-align: center;
 		list-style-type: none;
 		margin: 0px;
 		padding: 0px;
 	}
-
-		#navigation-menu  li {
-			font-family: 'Raleway';
+		.nav-list  li {
 			display: inline;
 			text-align: -webkit-match-parent;
 			letter-spacing: 1px;
-			padding-bottom: 10px;
+			padding-bottom: 7px;
 		}
-
-			#navigation-menu li span {
-				margin-right: 10vw;
+			.nav-list li span {
 				cursor: pointer;
 				position: relative;
 				letter-spacing:1px; 
+			}
+			.nav-list li:last-child span {
+			   	margin-right: 0px;
+			}
+
+	#navigation-menu {
+		position: fixed;
+		height: 100px;
+		border-bottom: 0.4vh solid #999;
+		width: 100%;
+		z-index: 100;
+	}
+
+		#navigation-menu  li {
+			font-family: 'Raleway';
+		}
+			#navigation-menu li span {
+				margin-right: 10vw;
 			    -webkit-transition: letter-spacing, 0.1s;
 			    -moz-transition: letter-spacing, 0.1s;
 			    -o-transition: letter-spacing, 0.1s;
@@ -155,46 +170,30 @@
 				letter-spacing:3px;
 			}
 
-			#navigation-menu li:last-child span {
-			   	margin-right: 0px;
-			}
 
-#small-nav {
-	width: 100%;
-	padding-top: 20px;
-	padding-bottom: 8px;
-	z-index: 100;
-	background-color: white;
-	border-bottom: 0.5vmin solid #666;
-	border-top: 0.5vmin solid #666;
-	opacity: 0.8;
-}
-
-	#small-nav ul{
-		text-align: center;
-		list-style-type: none;
-		margin: 0px;
-		padding: 0px;
+	#small-nav {
+		padding-top: 10px;
+		padding-bottom: 8px;
+		background-color: white;
+		border-bottom: 0.5vmin solid #666;
+		border-top: 0.5vmin solid #666;
+		width: 100%;
+		z-index: 100;
 	}
 
 		#small-nav  li {
 			font-family: 'Quicksand';
-			display: inline;
-			text-align: -webkit-match-parent;
-			letter-spacing: 1px;
-			padding-bottom: 10px;
 		}
 
 			#small-nav li span {
 				margin-right: 6vw;
-				cursor: pointer;
-				position: relative;
-				letter-spacing:1px; 
 			}
-
-			#small-nav li:last-child span {
-			   	margin-right: 0px;
-			}
+		#small-nav.fixed{
+			position: fixed;
+			top: 100px;
+			left: 0;
+		}
+		
 
 
 /* Color by class */
@@ -241,10 +240,12 @@
 		  left: 0;
 		}
 			.parallax-layer-base {
+				padding-top: 100vh;
+				position: relative;
 			  	transform: translateZ(0);
 			}
 			.parallax-layer-back {
-			  transform: translateZ(-2px) scale(3);
+			  	transform: translateZ(-2px) scale(3);
 			}
 
 

@@ -198,13 +198,13 @@
 		"show" : true
 	},
 	{
-		"title": "En vacker Dag",
+		"title": "En Gömd Dag",
 		"categories": [
 		 	"city",
 		 	"all",
 		 	"nature"
 		],
-		"subtext" : "Ett foto jag tog en vacker dag i april",
+		"subtext" : "Ett foto jag hittade gömt",
 		"src" : "http://lorempixel.com/800/600/nature",
 		"show" : true
 	},

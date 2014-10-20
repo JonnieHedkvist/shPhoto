@@ -1,11 +1,20 @@
 
 var app = angular.module('shPhoto', []);
 
-app.controller('MenuController', function($scope, $http){
+app.controller('MenuController', function($scope, $http, $location, $anchorScroll){
 	$scope.items = [];
 	$http.get('data/categories.json').success(function(data) {
 	   $scope.items = data;
 	});
+	//Scoll to div with id=x
+	$scope.gotoAnchor = function(x) {
+		var newHash = 'anchor' + x;
+		if ($location.hash() !== newHash) {
+		  $location.hash('anchor' + x);
+		} else {
+		  $anchorScroll();
+		}
+	};
 });
 
 app.controller('PhotoController', function($scope, $http){
@@ -53,4 +62,18 @@ app.directive('topNav', function() {
 		restrict: 'E',
 		templateUrl: '/partials/top-nav.html'
 	};
+});
+
+app.directive('showOnHoverParent',
+   function() {
+      return {
+         link : function(scope, element, attrs) {
+            element.parent().bind('mouseenter', function() {
+                element.show();
+            });
+            element.parent().bind('mouseleave', function() {
+                 element.hide();
+            });
+       }
+   };
 });
